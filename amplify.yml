@@ -1,0 +1,19 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install -g pnpm   # Install pnpm globally using npm (always works)
+        - pnpm install          # Now run your deps install
+    build:
+      commands:
+        - pnpm build            # Or whatever your build script is (check package.json)
+        # If no "build" script exists (common for simple static + server), skip or use:
+        # - echo "No build step needed - copying static"
+  artifacts:
+    baseDirectory: static     # Your main files are here
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*     # Cache deps for faster future builds
