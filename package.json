@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "node index.js"  // optional, for local dev if you want
+    "dev": "node index.js" 
   },
   "keywords": [],
   "author": "",
